@@ -4,19 +4,22 @@
 <beans>
 	<bean id="triangle" class = "prepare.interview.Triangle">
 		<property name="pointA" ref="point0"/>
-		<property name="pointB" ref="point1"/>
-		<property name="pointC" ref="point2"/>
+		<property name="pointB">
+			<bean class="prepare.interview.Point">
+				<property name="x" value="-20"/>
+				<property name="y" value="0"/>
+			</bean>
+		</property>
+		<property name="pointC">
+			<bean class="prepare.interview.Point">
+				<property name="x" value="20"/>
+				<property name="y" value="0"/>
+			</bean>
+		</property>
 	</bean>
 	<bean id="point0" class="prepare.interview.Point">
 		<property name="x" value="0"/>
 		<property name="y" value="0"/>
 	</bean>
-	<bean id="point1" class="prepare.interview.Point">
-		<property name="x" value="-20"/>
-		<property name="y" value="0"/>
-	</bean>
-	<bean id="point2" class="prepare.interview.Point">
-		<property name="x" value="0"/>
-		<property name="y" value="20"/>
-	</bean>
+	<alias name="triangle" alias="triangle-alias"/>
 </beans>
