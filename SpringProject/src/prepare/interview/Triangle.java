@@ -2,32 +2,40 @@ package prepare.interview;
 
 public class Triangle {
 
-	private String type;
-	private int height;
-
-	public Triangle(int height) {
-		super();
-		this.height = height;
-	}
-
-	public Triangle(String type){
-		this.type = type;
-	}
-
-	public Triangle(String type, int height){
-		this.height = height;
-		this.type = type;
-	}
-
-	public int getHeight() {
-		return height;
-	}
+	private Point pointA, pointB, pointC;
 	
-	public String getType() {
-		return type;
+	public Point getPointA() {
+		return pointA;
+	}
+
+	public void setPointA(Point pointA) {
+		this.pointA = pointA;
+	}
+
+	public Point getPointB() {
+		return pointB;
+	}
+
+	public void setPointB(Point pointB) {
+		this.pointB = pointB;
+	}
+
+	public Point getPointC() {
+		return pointC;
+	}
+
+	public void setPointC(Point pointC) {
+		this.pointC = pointC;
 	}
 
 	public void draw(){
-		System.out.println(getType() + " " + getHeight() + " Triangle drawn");
+		System.out.println(toString());
 	}
+
+	@Override
+	public String toString() {
+		return "Triangle [pointA=" + pointA + ", pointB=" + pointB
+				+ ", pointC=" + pointC + "]";
+	}
+	
 }
