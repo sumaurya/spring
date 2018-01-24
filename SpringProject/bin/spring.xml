@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="triangle" class = "prepare.interview.Triangle">
+		<!-- property name="type" value="equilateral" -->
+		<constructor-arg index="0" value="equilateral"/>
+		<constructor-arg index="1" value="20"/>
+	</bean>
+</beans>
