@@ -1,31 +1,17 @@
 package prepare.interview;
 
+import java.util.List;
+
 public class Triangle {
 
-	private Point pointA, pointB, pointC;
-	
-	public Point getPointA() {
-		return pointA;
+	private List<Point> points;
+
+	public List<Point> getPoints() {
+		return points;
 	}
 
-	public void setPointA(Point pointA) {
-		this.pointA = pointA;
-	}
-
-	public Point getPointB() {
-		return pointB;
-	}
-
-	public void setPointB(Point pointB) {
-		this.pointB = pointB;
-	}
-
-	public Point getPointC() {
-		return pointC;
-	}
-
-	public void setPointC(Point pointC) {
-		this.pointC = pointC;
+	public void setPoints(List<Point> points) {
+		this.points = points;
 	}
 
 	public void draw(){
@@ -34,8 +20,8 @@ public class Triangle {
 
 	@Override
 	public String toString() {
-		return "Triangle [pointA=" + pointA + ", pointB=" + pointB
-				+ ", pointC=" + pointC + "]";
+		return "Triangle [points=" + points + "]";
 	}
+
 	
 }
