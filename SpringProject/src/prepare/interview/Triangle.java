@@ -1,11 +1,6 @@
 package prepare.interview;
 
-import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
-import org.springframework.context.ApplicationContext;
-
-public class Triangle implements InitializingBean, DisposableBean{
+public class Triangle{
 
 	private Point pointA, pointB, pointC;
 	
@@ -41,23 +36,5 @@ public class Triangle implements InitializingBean, DisposableBean{
 	public String toString() {
 		return "Triangle [pointA=" + pointA + ", pointB=" + pointB
 				+ ", pointC=" + pointC + "]";
-	}
-
-	@Override
-	public void destroy() throws Exception {
-		System.out.println("destroy method");
-	}
-
-	@Override
-	public void afterPropertiesSet() throws Exception {
-		System.out.println("init method");
-	}
-	
-	public void myInit() {
-		System.out.println("my init method");
-	}
-	
-	public void cleanUp(){
-		System.out.println("my cleanUp method");
 	}
 }
