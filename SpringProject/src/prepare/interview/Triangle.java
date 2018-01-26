@@ -1,14 +1,13 @@
 package prepare.interview;
 
 import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
 
-public class Triangle implements ApplicationContextAware, BeanNameAware{
+public class Triangle implements InitializingBean, DisposableBean{
 
 	private Point pointA, pointB, pointC;
-	private ApplicationContext context;
 	
 	public Point getPointA() {
 		return pointA;
@@ -45,14 +44,20 @@ public class Triangle implements ApplicationContextAware, BeanNameAware{
 	}
 
 	@Override
-	public void setApplicationContext(ApplicationContext context) throws BeansException {
-		this.context = context;
-		
+	public void destroy() throws Exception {
+		System.out.println("destroy method");
 	}
 
 	@Override
-	public void setBeanName(String beanName) {
-		System.out.println("beanName is - " + beanName);
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("init method");
 	}
 	
+	public void myInit() {
+		System.out.println("my init method");
+	}
+	
+	public void cleanUp(){
+		System.out.println("my cleanUp method");
+	}
 }

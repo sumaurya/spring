@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 
-<beans>
-	<bean id="triangle" class = "prepare.interview.Triangle" autowire="byName">
-		
+<beans default-init-method="myInit" default-destroy-method="cleanUp">
+	<bean id="triangle" class = "prepare.interview.Triangle">
+		<property name="pointA" ref="pointA"/>
+		<property name="pointB" ref="pointB"/>
+		<property name="pointC" ref="pointC"/>
 	</bean>
 	<bean id="pointB" class="prepare.interview.Point">
 		<property name="x" value="20"/>
@@ -17,5 +19,4 @@
 		<property name="x" value="0"/>
 		<property name="y" value="0"/>
 	</bean>
-	<alias name="triangle" alias="triangle-alias"/>
 </beans>
