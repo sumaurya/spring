@@ -1,8 +1,14 @@
 package prepare.interview;
 
-public class Triangle {
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
+public class Triangle implements ApplicationContextAware, BeanNameAware{
 
 	private Point pointA, pointB, pointC;
+	private ApplicationContext context;
 	
 	public Point getPointA() {
 		return pointA;
@@ -36,6 +42,17 @@ public class Triangle {
 	public String toString() {
 		return "Triangle [pointA=" + pointA + ", pointB=" + pointB
 				+ ", pointC=" + pointC + "]";
+	}
+
+	@Override
+	public void setApplicationContext(ApplicationContext context) throws BeansException {
+		this.context = context;
+		
+	}
+
+	@Override
+	public void setBeanName(String beanName) {
+		System.out.println("beanName is - " + beanName);
 	}
 	
 }
