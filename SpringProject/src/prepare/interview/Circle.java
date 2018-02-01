@@ -1,7 +1,8 @@
 package prepare.interview;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.annotation.Resource;
 
 
 public class Circle implements Shape {
@@ -12,8 +13,7 @@ public class Circle implements Shape {
 		return center;
 	}
 
-	@Autowired
-	@Qualifier("circle")
+	@Resource(name="pointC")
 	public void setCenter(Point center) {
 		this.center = center;
 	}
@@ -27,5 +27,15 @@ public class Circle implements Shape {
 	@Override
 	public String toString() {
 		return center.toString();
+	}
+	
+	@PostConstruct
+	public void init(){
+		System.out.println("init of Circle");
+	}
+	
+	@PreDestroy
+	public void destroy(){
+		System.out.println("destroy of Circle");
 	}
 }

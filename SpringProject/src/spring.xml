@@ -21,7 +21,6 @@
 		<property name="y" value="0"/>
 	</bean>
 	<bean id="pointA" class="prepare.interview.Point">
-		<qualifier value="circle"/>
 		<property name="x" value="0"/>
 		<property name="y" value="0"/>
 	</bean>
