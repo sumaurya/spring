@@ -7,6 +7,9 @@
 		<property name="pointB" ref="pointB"/>
 		<property name="pointC" ref="pointC"/>
 	</bean>
+	<bean id="circle" class = "prepare.interview.Circle">
+		<property name="center" ref="pointC"/>
+	</bean>
 	<bean id="pointB" class="prepare.interview.Point">
 		<property name="x" value="20"/>
 		<property name="y" value="0"/>
@@ -19,5 +22,4 @@
 		<property name="x" value="0"/>
 		<property name="y" value="0"/>
 	</bean>
-	<bean class="prepare.interview.DisplayNameBeanPostProcessor"></bean>
 </beans>

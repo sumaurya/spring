@@ -1,6 +1,6 @@
 package prepare.interview;
 
-public class Triangle{
+public class Triangle implements Shape{
 
 	private Point pointA, pointB, pointC;
 	
@@ -29,12 +29,12 @@ public class Triangle{
 	}
 
 	public void draw(){
-		System.out.println(toString());
+		System.out.println("Triangle drawn - " + toString());
 	}
 
 	@Override
 	public String toString() {
-		return "Triangle [pointA=" + pointA + ", pointB=" + pointB
+		return "[pointA=" + pointA + ", pointB=" + pointB
 				+ ", pointC=" + pointC + "]";
 	}
 }
