@@ -1,5 +1,7 @@
 package prepare.interview;
 
+import org.springframework.beans.factory.annotation.Required;
+
 public class Circle implements Shape {
 
 	Point center;
@@ -8,7 +10,7 @@ public class Circle implements Shape {
 		return center;
 	}
 
-
+	@Required
 	public void setCenter(Point center) {
 		this.center = center;
 	}
